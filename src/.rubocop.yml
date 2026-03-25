@@ -10,6 +10,10 @@ AllCops:
     - 'tmp/**/*'
     - 'log/**/*'
 
+plugins:
+  - rubocop-rails
+  - rubocop-rspec
+
 Layout/LineLength:
   Max: 120
 
@@ -21,22 +25,13 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'config/routes.rb'
-    - 'config/environments/*.rb'
+    - 'config/environments/**/*'
 
 Metrics/CyclomaticComplexity:
   Max: 6
 
-Metrics/PerceivedComplexity:
-  Max: 7
-
-Metrics/ParameterLists:
-  Max: 5
-
 Style/StringLiterals:
-  EnforcedStyle: double_quotes
+  EnforcedStyle: single_quotes
 
 Style/HashSyntax:
   EnforcedStyle: ruby19
-
-Style/Documentation:
-  Enabled: false

@@ -1,7 +1,5 @@
-# frozen_string_literal: true
-
 class Concern < ApplicationRecord
-  belongs_to :owner, class_name: "User"
+  belongs_to :owner, class_name: 'User'
   has_many :documents, dependent: :nullify
 
   validates :name, presence: true, uniqueness: { scope: :owner_id }
@@ -11,9 +9,5 @@ class Concern < ApplicationRecord
 
   def confirm!
     update!(confirmed_at: Time.current)
-  end
-
-  def confirmed?
-    confirmed_at.present?
   end
 end
